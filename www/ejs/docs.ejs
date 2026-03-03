@@ -1,0 +1,113 @@
+
+     
+        
+<section>
+  <p>Yup, it's possible, at least for simple projects. Whether you're an electronics newb, 
+  Arduino nut, or makerspace mama, these techniques might be for you. No nasty acids or chemicals!
+  (Though maybe a few paper cuts.)</p>
+  
+  <pre>(image of the layers)</pre>
+  
+  <h4>Make printed circuit boards in minutes:</h4>
+  
+  <p>Visual learner? Watch the <a href="#">getting started video</a>.
+  
+  <h2>1. Design it</h2>
+  <p>
+    Using your favorite design tool (KiCad, EasyEDA, Photoshop, InkSpace, GIMP, etc.) draw your
+    circuit board. Save your <a href="/docs/designing/layer-naming">layers</a> as <code>Gerber</code>, <code>PSD</code>,
+    <code>PNG</code>, or <code>SVG</code>.
+  </p>
+  <pre>(kicad I guess? export arrow to gerber etc. ms paint joke?)</pre>
+  <p>
+    Your design can be "just traces", 
+    single or double sided, solder masked, flexible, transparent, and more. See the
+    <a href="#">Designing</a> section for all the options.
+  </p>
+ 
+</section>
+
+
+<section>
+  <h2>2. Convert it</h2>
+  <p>Drag your files into the free <a href="/">PaperPCB Studio</a> and tell it
+  what kind of board you want.</P>
+  
+  <pre>(image of the design tool, drag in, export out)</pre>
+  
+  <P>The software aligns everything nicely, then exports a printable <code>PDF</code>
+   and cutable <code>SVG</code>.</p>
+</section>
+
+<section>
+  <h2>3. Print it</h2>
+  
+  <p>This step is optional, but if you have a laser or inkjet printer, this is how
+  you get graphics on your board. Print the <code>PDF</code> you downloaded a second ago.</p>
+  
+  <pre>(printer output example)</pre>
+  
+  <p>In addition to your jazzy art, the page includes registration marks
+  so the cutting will be pixel-perfect. It also does some folding tricks to help
+  align two-sided boards.</p>
+  
+  <p>If you don't have a printer, no worries. You can use blank paper, cardstock,
+  kapton tape, etc.
+</section>
+
+<section>
+  <h2>4. Copper it</h2>
+  <p>This is the step that adds the spark. Peel and stick some copper tape 
+  to your page. (See the <a href="/docs/getting-started/what-you-need">what you need</a>
+  page for tips on buying the stuff.)
+  
+  <pre>(photo or video of applying copper)</pre>
+  
+  <p>If you printed in step #3, the copper areas will be nicely marked. 
+  If you didn't, you'll have to eyeball it. It's not too hard.
+  
+  
+</section>
+
+<section>
+  <h2>5. Cut it</h2>
+  <p>At this point, you'll have some coppered paper and the <code>SVG</code> file 
+  you got from Studio. Import it into your cutter's control software and get cutting!
+  
+  <pre>(cutting cricut video)</pre>
+  
+  <p>The printable page will include some instructions, or check out the
+  <a href="#">Machines</a> section for the best settings to use.
+</section>
+
+<section>
+  <h2>6. Weed it</h2>
+  <p>Cutting's done! Carefully pick away the unwanted copper to leave your
+  traces, then peel-and-stick your solder mask (if any.)
+  <pre>(weeding img or video)</pre>
+  
+  <p>This step requires a steady hand and a little patience, but if you choose
+  the right papers, it'll go great.
+  See the <a href="#">Materials</a> section for links to recommended products.
+</section>
+
+<section>
+  <h2>7. Stab it</h2>
+  <p>If your design has holes or vias, poke them out with
+  a needle or punch. (Of course, if your design is all surface-mount, you can skip this step.)
+  <pre>(stabbing img or video)</pre>
+  
+  <p>Since most pin-based modules are designed for breadboards, the holes
+  have standard tenth-inch spacing. Save time by 3d printing the official 
+  PaperPCB tool, <a href="#">Mr. Stabby</a>. He's fun and only a little dangerous.
+</section>
+
+<section>
+  <h2>That's it!</h2>
+  <p>Or at least... that's the basic idea. Now go <a href="#">solder up your board</a>
+  and test it! If you're like me, your design will need a LOT of iteration. I hope
+  PaperPCB helps with that.
+</section>
+        
+        
+

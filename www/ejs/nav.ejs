@@ -1,0 +1,56 @@
+<%
+
+// Figure out the current page.
+//this.currentChapter = this.nav.chapters[0];
+//this.currentLink = this.nav.chapters[0].links[2];
+
+
+
+%>
+
+
+<nav aria-label="breadcrumb">
+  <ul>
+    <li>
+      <span class="secondary" data-discover="true" onclick="site.showMobileNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-menu">
+          <path d="M4 6l16 0"></path>
+          <path d="M4 12l16 0"></path>
+          <path d="M4 18l16 0"></path>
+        </svg>
+        Documentation
+      </span>
+    </li>
+    <li><%= this.currentChapter.label %></li>
+  </ul>
+</nav>
+<aside id="documentation-menu">
+  <header>
+    <h2>Documentation</h2>
+    <span aria-label="Close" class="secondary" data-discover="true" onclick="site.hideMobileNav()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-close">
+        <path d="M18 6l-12 12"></path>
+        <path d="M6 6l12 12"></path>
+      </svg>
+    </span>
+  </header>
+  <nav class="is-sticky-above-lg" style="--max-height: 658.75px;">
+    
+    <% for (const chapter of this.nav.chapters) { %>
+      <details  <% if (chapter === this.currentChapter) { %> open="" <% } %> >
+        <summary <% if (chapter === this.currentChapter) { %> aria-current="true" <%}%>
+        ><%= chapter.label %></summary>
+        <ul>
+          <% for (const link of chapter.links) { %>
+            <li><a class="secondary" 
+              <% if (link === this.currentLink) { %> aria-current="page" <% } %>
+              data-discover="true"
+              href="<%= link.path %>"
+              ><%= link.label %></a></li>
+          <% } %>
+        </ul>
+      </details>
+    
+    <% } %>
+  </nav>
+</aside>

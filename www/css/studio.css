@@ -1,0 +1,21 @@
+/**
+ * CSS Styles for the PaperPCB site.
+ */
+.pcb-title-link {
+  text-decoration: none;
+  color: var(--pico-h1-color);
+  font-size: 35px;
+  font-weight: 700;
+}
+.pcb-title-link img {
+  margin-right: 7px;
+  position: relative;
+  top: -2px;
+}
+xh1 {
+  padding: 0;
+  background: var(--pico-mark-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

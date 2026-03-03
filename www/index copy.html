@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#2a3140">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="/">
+    <meta property="og:image" content="/img/opengraph.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PaperPCB">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paperpcb.org/">
+    <title>PaperPCB</title>
+    <meta name="description" content="Tools and techniques for making printed circuit boards at home.">
+    <link rel="icon" href="/img/paperpcb-flat.svg" type="image/svg+xml">
+    <link rel="icon" href="/img/paperpcb-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/pico.base.css">
+    
+    <link rel="stylesheet" href="/css/pico.violet.colors.css">
+    <link rel="stylesheet" href="/css/studio.css">
+    <title>PaperPCB</title>
+    <script type="module">
+      // A cache bust version string that's used for assets in the site.
+      window.cb = '1.00';
+      
+      // You can see the debug version of the site with a ?debug query string. You'll
+      // get all unbundled, un-minified JS code. Or the bundled version at ?bundled.
+      if (true || window.location.search.includes('debug')) {
+        import('/mjs/index.mjs');
+      } else if (window.location.search.includes('bundled')) {
+        import('/rollup/dist/site.mjs?' + window.cb);
+      } else {
+        import('/rollup/dist/site.min.mjs?' + window.cb);
+      }
+    </script>
+  </head>
+  <body style="min-height: 770px;">
+    <header class="is-fixed-above-lg">
+      <div class="container">
+        <a aria-label="Pico CSS homepage" data-discover="true" href="/" class="pcb-title-link">
+          <img src="/img/paperpcb.svg" width="40">PaperPCB
+        </a>
+        <nav>
+          <ul>
+            <li class="hide-before-sm"><a class="contrast" data-discover="true" href="/">Studio</a></li>
+            <li class="hide-before-sm"><a aria-current="page" class="contrast" data-discover="true" href="/docs/">Docs</a></li>
+          </ul>
+          <ul class="icons">
+            <li>
+              <a rel="noopener noreferrer" class="contrast" aria-label="GitHub" title="Github" href="https://github.com/scottlininger/paperpcb" target="_blank" title="Github Repo">
+                <img src="/img/github.svg" width="20" alt="Github">
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" class="contrast" aria-label="YouTube" title="YouTube" href="https://www.youtube.com/@scottlininger4189" target="_blank">
+                <img src="/img/youtube.svg" width="26" alt="YouTube">
+              </a>
+            </li>
+            <li>
+              <a class="contrast" aria-label="Discord" data-discover="true" title="Discord" href="https://discord.gg/jXWFuZHdEQ" target="_blank">
+                <img src="/img/discord.svg" width="24" alt="Discord">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="container homepage">
+      
+      <link rel="stylesheet" href="/css/landings.css">
+      <section class="hero">
+        <div class="hook">
+          <h1><mark>Minimal CSS&nbsp;Framework</mark> <br>for Semantic&nbsp;HTML</h1>
+          <p class="secondary">A minimalist and lightweight starter&nbsp;kit that prioritizes semantic&nbsp;syntax, making every HTML&nbsp;element responsive and elegant&nbsp;by&nbsp;default.</p>
+          <p>Write&nbsp;HTML, Add&nbsp;Pico&nbsp;CSS, and&nbsp;Voilà!</p>
+          <div class="grid ctas">
+            <a role="button" data-discover="true" href="/docs">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow-right">
+                <g class="head">
+                  <path d="M10 16L14 12"></path>
+                  <path d="M10 8L14 12"></path>
+                </g>
+                <path class="line" d="M0 12H14"></path>
+              </svg>
+            </a>
+            <a role="button" class="contrast" data-discover="true" href="/examples">
+              Examples
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow-right">
+                <g class="head">
+                  <path d="M10 16L14 12"></path>
+                  <path d="M10 8L14 12"></path>
+                </g>
+                <path class="line" d="M0 12H14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="demo">
+          <article class="component" aria-label="Demo">
+            <form class="">
+              <select name="select-demo" tabindex="-1" required="">
+                <option disabled="" value="" selected="">Select...</option>
+              </select>
+              <button tabindex="-1" type="submit" class="fade-in" aria-busy="false">Next</button>
+            </form>
+            <footer class="code">
+              <pre><code><noscript>&lt;<span class="token tag">form</span>&gt;<br/>  &lt;<span class="token tag">input</span><br/>    <span class="token tag attr-name">type</span>=<span class="token tag attr-value">&quot;email&quot;</span><br/>    <span class="token tag attr-name">placeholder</span>=<span class="token tag attr-value">&quot;Enter your email&quot;</span><br/>  /&gt;<br/>&lt;/<span class="token tag">form</span>&gt;</noscript><span as="span" style="opacity: 1;" data-typeit-id="6175998">&lt;<span class="token tag">form</span>&gt;<br>  &lt;<span class="token tag">label</span><span class="ti-cursor" data-ti-animation-id="6175998">|</span><br>  &lt;<span class="token tag">button</span>&gt;Next&lt;/<span class="token tag">button</span>&gt;<br>&lt;/<span class="token tag">form</span>&gt;</span></code></pre>
+            </footer>
+          </article>
+        </div>
+      </section>  
+      
+      <section>
+        <h1>Hello world!</h1>
+        <p>This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        This is some text that goes really long.
+        <button>Test</button>
+      </section>
+    </main>
+    
+    
+    
+    <footer>
+      <div class="container">
+        <section>
+          <img src="/img/paperpcb.svg" width="60">
+          <nav class="links">
+            <ul>
+              <li><strong>About</strong></li>
+              <li><a class="secondary" data-discover="true" href="/docs/v2">What’s new?</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/brand">Brand</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/mission">Mission</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/usage-scenarios">Usage scenarios</a></li>
+            </ul>
+            <ul>
+              <li><strong>Docs</strong></li>
+              <li><a aria-current="page" class="secondary" data-discover="true" href="/docs">Quick start</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/version-picker">Version picker</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/classless">Class-less version</a></li>
+              <li><a class="secondary" data-discover="true" href="/docs/forms">Form elements</a></li>
+            </ul>
+            <ul>
+              <li><strong>Community</strong></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/issues" target="_blank">Issues</a></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/discussions" target="_blank">Discussions</a></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/discussions/categories/help" target="_blank">Help</a></li>
+            </ul>
+            <ul>
+              <li><strong>Tutorials</strong></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/embed/4mrnhq?view=Editor+%2B+Preview&amp;module=%2Findex.html" target="_blank">HTML</a></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/embed/x4qtf8?view=Editor+%2B+Preview&amp;module=%2Findex.html" target="_blank">Class-less</a></li>
+              <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/p/devbox/github/picocss/examples/tree/master/v2-react-classless-login?embed=1&amp;file=%2Fsrc%2Fmain.scss" target="_blank">React</a></li>
+              <li><a class="secondary" data-discover="true" href="/examples">All</a></li>
+            </ul>
+          </nav>
+          <p class="build-info">
+            A "nights and weekends" project created by <a rel="noopener noreferrer" class="secondary" href="https://linkedin.com/in/scottlininger" target="_blank">Scott Lininger</a> with the help of <!-- --> <a rel="noopener noreferrer" class="secondary" href="/docs/">lots of great tools</a>.
+          </p>
+          <ul class="resources">
+            <li>
+              <a rel="noopener noreferrer" class="contrast" title="GitHub" href="https://github.com/scottlininger/paperpcb" target="_blank">
+                <img src="/img/github.svg" width="24" alt="Github">
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" class="contrast" title="YouTube" href="https://www.youtube.com/@scottlininger4189" target="_blank">
+                <img src="/img/youtube.svg" width="26" alt="YouTube">
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" class="contrast" title="Discord" href="https://discord.gg/jXWFuZHdEQ" target="_blank">
+                <img src="/img/discord.svg" width="24" alt="Discord">
+              </a>
+            </li>
+            
+          
+          </ul>
+        </section>
+        <section>
+          <p>
+            v1.0.0 • Licensed under <a rel="noopener noreferrer" class="secondary" href="https://github.com/scottlininger/paperpcb/blob/main/LICENSE" target="_blank">MIT</a>.
+          </p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

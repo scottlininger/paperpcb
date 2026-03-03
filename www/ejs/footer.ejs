@@ -1,0 +1,72 @@
+<footer>
+  <div class="container">
+    <section>
+      <img src="/img/paperpcb.svg" width="60">
+      <nav class="links">
+        <% for (const chapter of site.nav.chapters) { %>
+          <% if (chapter.label == 'Getting started' || 
+                 chapter.label == 'Community' ||
+                 chapter.label == 'Cutting Machines' ||
+                 chapter.label == 'Designing') { %>
+            <ul>
+              <li><strong><%= chapter.label %></strong></li>
+              <% for (const link of chapter.links) { %>
+                <li><a class="secondary" data-discover="true" href="<%= link.href %>"><%= link.label %></a></li>
+              <% } %>
+            </ul>
+          <% } %>
+        <% } %>
+        
+        <!--
+        <ul>
+          <li><strong>Docs</strong></li>
+          <li><a aria-current="page" class="secondary" data-discover="true" href="/docs">Quick start</a></li>
+          <li><a class="secondary" data-discover="true" href="/docs/version-picker">Version picker</a></li>
+          <li><a class="secondary" data-discover="true" href="/docs/classless">Class-less version</a></li>
+          <li><a class="secondary" data-discover="true" href="/docs/forms">Form elements</a></li>
+        </ul>
+        <ul>
+          <li><strong>Community</strong></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/issues" target="_blank">Issues</a></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/discussions" target="_blank">Discussions</a></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://github.com/picocss/pico/discussions/categories/help" target="_blank">Help</a></li>
+        </ul>
+        <ul>
+          <li><strong>Tutorials</strong></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/embed/4mrnhq?view=Editor+%2B+Preview&amp;module=%2Findex.html" target="_blank">HTML</a></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/embed/x4qtf8?view=Editor+%2B+Preview&amp;module=%2Findex.html" target="_blank">Class-less</a></li>
+          <li><a rel="noopener noreferrer" class="secondary" href="https://codesandbox.io/p/devbox/github/picocss/examples/tree/master/v2-react-classless-login?embed=1&amp;file=%2Fsrc%2Fmain.scss" target="_blank">React</a></li>
+          <li><a class="secondary" data-discover="true" href="/examples">All</a></li>
+        </ul>
+        -->
+      </nav>
+      <p class="build-info">
+        A "nights and weekends" project created by <a rel="noopener noreferrer" class="secondary" href="https://linkedin.com/in/scottlininger" target="_blank">Scott Lininger</a> with the help of <!-- --> <a rel="noopener noreferrer" class="secondary" href="/docs/">lots of great tools</a>.
+      </p>
+      <ul class="resources">
+        <li>
+          <a rel="noopener noreferrer" class="contrast" title="GitHub" href="https://github.com/scottlininger/paperpcb" target="_blank">
+            <img src="/img/github.svg" width="24" alt="Github">
+          </a>
+        </li>
+        <li>
+          <a rel="noopener noreferrer" class="contrast" title="YouTube" href="https://www.youtube.com/@scottlininger4189" target="_blank">
+            <img src="/img/youtube.svg" width="26" alt="YouTube">
+          </a>
+        </li>
+        <li>
+          <a rel="noopener noreferrer" class="contrast" title="Discord" href="https://discord.gg/jXWFuZHdEQ" target="_blank">
+            <img src="/img/discord.svg" width="24" alt="Discord">
+          </a>
+        </li>
+        
+      
+      </ul>
+    </section>
+    <section>
+      <p>
+        v1.0.0 • Licensed under <a rel="noopener noreferrer" class="secondary" href="https://github.com/scottlininger/paperpcb/blob/main/LICENSE" target="_blank">MIT</a>.
+      </p>
+    </section>
+  </div>
+</footer>
