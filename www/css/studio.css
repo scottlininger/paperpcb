@@ -19,3 +19,18 @@ xh1 {
   background-clip: text;
   color: transparent;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .nowrap {
+    white-space: normal;
+  }
+}
+
+.home-benefits article img {
+  width: 32px;
+  margin-bottom: 12px;
+}

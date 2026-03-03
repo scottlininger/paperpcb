@@ -131,6 +131,7 @@ export default class DocsPage extends Page {
       });
       
     }
+    window.scrollTo(0, 0);
   }
   
   
