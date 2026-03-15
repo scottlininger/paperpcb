@@ -1,0 +1,11 @@
+<svg width="6.8in" height="9.4in" viewBox="0 0 652.8 902.4" xmlns="http://www.w3.org/2000/svg">
+  <g id="Main_Group">
+    
+    <rect id="Background_Print" x="0" y="0" width="652.8" height="902.4" fill="#f0f0f0" stroke="none" />
+    
+    <rect id="Square_Cut" x="276.4" y="401.2" width="100" height="100" fill="none" stroke="red" stroke-width="2" />
+
+    <line id="Line_Score" x1="0" y1="451.2" x2="652.8" y2="451.2" stroke="magenta" stroke-width="2" />
+
+  </g>
+</svg>

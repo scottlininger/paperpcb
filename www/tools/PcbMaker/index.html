@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <title>Extension</title>
+
+    <!-- include the css file, and your HTML will look a bit more Sketchuppy. -->
+    <!--<link rel="stylesheet" href="/jsa/sketchup.iframe.css">-->
+
+    <!-- Include the necessary SketchUp JSA hooks. -->
+    <!--<script type="application/javascript" src="/jsa/Sketchup.js"></script>-->
+    <script type="module" src="pcb-maker.js"></script>
+  </head>
+  <body>
+  </body>
+  <script>
+  
+  /**
+   * Look for a module=foo.js parameter, and load as a JS module.
+   
+  const params = new URLSearchParams(window.location.search);
+  const modulePath = params.get('module');
+  const baseUrl = params.get('baseUrl');
+
+
+  // If the required query params exists, inject into the document head.
+  if (modulePath && baseUrl) {
+    // Set the baseUrl for loading subsequent code and assets.
+    const baseElement = document.createElement('base');
+    baseElement.href = baseUrl;
+    document.head.prepend(baseElement);
+
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = modulePath;
+    document.head.appendChild(script);
+  } else {
+    alert('To load a JSA extension as a JS module, you must provide ' +
+      'module= and baseUrl= query params. If you\'re seeing this message ' +
+      'then something is busted with the loader. Contact scott_lininger@trimble.com');
+  }
+  */
+  </script>
+</html>
