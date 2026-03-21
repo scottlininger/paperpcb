@@ -85,11 +85,24 @@ function getLayerLabel(layer) {
 
 const MERGE_TYPES = new Set(['copper']);
 
-const SKIP_EXTENSIONS = new Set(['.md', '.txt', '.json', '.png', '.jpg', '.pdf']);
+const ALLOWED_EXTENSIONS = new Set([
+  '.gbr', '.ger',
+  '.gtl', '.gbl',
+  '.gto', '.gbo',
+  '.gts', '.gbs',
+  '.gtp', '.gbp',
+  '.gko', '.gm1', '.gml', '.gdl',
+  '.drl', '.xln',
+]);
 
-function shouldSkipFile(name) {
+function getExtension(name) {
   const lower = name.toLowerCase();
-  return SKIP_EXTENSIONS.has(lower.slice(lower.lastIndexOf('.')));
+  const index = lower.lastIndexOf('.');
+  return index >= 0 ? lower.slice(index) : '';
+}
+
+function isAllowedFile(name) {
+  return ALLOWED_EXTENSIONS.has(getExtension(name));
 }
 
 /**
@@ -106,7 +119,10 @@ export async function handleGerberFile(arrayBuffer, filename, colors, options = 
 
   for (const [path, entry] of Object.entries(zip.files)) {
     if (entry.dir) continue;
-    if (shouldSkipFile(path)) continue;
+    if (!isAllowedFile(path)) {
+      console.log('[PcbMaker] Ignoring ZIP entry:', path);
+      continue;
+    }
     const text = await entry.async('string');
     files.push(new File([text], entry.name));
   }
@@ -126,14 +142,39 @@ export async function handleGerberFiles(files, filename, colors, options = {}) {
   const dpi = options.dpi || DEFAULT_DPI;
 
   // Filter out non-Gerber files.
-  const gerberFiles = files.filter(f => !shouldSkipFile(f.name));
+  const gerberFiles = files.filter((file) => {
+    const allowed = isAllowedFile(file.name);
+    if (!allowed) console.log('[PcbMaker] Ignoring dropped file:', file.name);
+    return allowed;
+  });
 
   if (gerberFiles.length === 0) {
     throw new Error('No Gerber files found.');
   }
 
-  // Parse → plot → render pipeline.
-  const readResult = await read(gerberFiles);
+  console.log('[PcbMaker] Reading files:', gerberFiles.map((file) => file.name));
+
+  let readResult;
+  try {
+    readResult = await read(gerberFiles);
+  } catch (err) {
+    console.warn('[PcbMaker] Batch read failed, retrying per file:', err);
+    const acceptedFiles = [];
+
+    for (const file of gerberFiles) {
+      try {
+        await read([file]);
+        acceptedFiles.push(file);
+      } catch (fileErr) {
+        console.warn('[PcbMaker] Ignoring unrecognized file:', file.name, fileErr);
+      }
+    }
+
+    if (acceptedFiles.length === 0) throw err;
+
+    console.log('[PcbMaker] Retrying with:', acceptedFiles.map((file) => file.name));
+    readResult = await read(acceptedFiles);
+  }
   const plotResult = plot(readResult);
   const layersResult = renderLayers(plotResult);
   const boardResult = renderBoard(layersResult);
